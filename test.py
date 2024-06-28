@@ -10,4 +10,4 @@ for hehe in tempfiledirectory:
                 try:
                     os.remove(x)
                 except:
-                    continue
+                    pass
