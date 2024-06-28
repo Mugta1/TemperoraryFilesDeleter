@@ -14,12 +14,10 @@ def deleter():
                         print(f"{file} not deleted")
 
 
+
 deleter()
-
-
 def main():
     time=time.sleep(172800)
-
     choice=input("It's been two days since the temperorary files were last deleted, Delete files again? Yes/No ")
     if choice.lower()=="yes":
         deleter()
