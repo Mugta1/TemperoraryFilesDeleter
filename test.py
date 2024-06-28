@@ -10,4 +10,4 @@ for hehe in tempfiledirectory:
                 try:
                     os.remove(x)
                 except:
-                    pass
+                    print(f"not deleted {file}")
