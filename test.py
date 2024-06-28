@@ -7,7 +7,7 @@ for hehe in tempfiledirectory:
         for path, subdir, files in os.walk(hehe):
             for file in files:
                 x=os.path.join(path, file)
-            try:
-                os.remove(x)
-            except:
-                continue
+                try:
+                    os.remove(x)
+                except:
+                    continue
