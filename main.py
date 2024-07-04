@@ -1,9 +1,8 @@
 import os
 import time
 tempfiledirectory=[r"C:\Windows\Temp", r"C:\Users\mg15d\AppData\Local\Temp" ]
+#basic function to traverse the directories provided and delete the files of the given directories
 def deleter(listofpath):
-    
-
     for hehe in listofpath:
         if os.path.isdir(hehe):
             for path, subdir, files in os.walk(hehe):
@@ -16,15 +15,21 @@ def deleter(listofpath):
 
 
 
-deleter(tempfiledirectory)
 def main(tempfiledirectory):
+    #puts the program to sleep for another two days
     time.sleep(172800)
-    choice=input("It's been two days since the temperorary files were last deleted, Delete files again? Yes/No ")
-    if choice.lower()=="yes":
-        deleter(tempfiledirectory)
-    else:
-        main()
+    #prompts the user after two days if they want to delete the files
+    while True:
+        choice=input("It's been two days since the temperorary files were last deleted, Delete files again? Yes/No ")
+        if choice.lower()=="yes":
+            deleter(tempfiledirectory)
+            main()
+        elif choice.lower()=="no":
+            main()
+        else:
+            print("Invalid input, please try again")
         
-    
-
-main(tempfiledirectory)
+#Runs the program vroom vroom :p
+if __name__=="__main__":
+    deleter(tempfiledirectory)
+    main(tempfiledirectory)
