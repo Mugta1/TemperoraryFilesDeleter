@@ -1,9 +1,10 @@
 import os
 import time
-def deleter():
-    tempfiledirectory=[r"C:\Windows\Temp", r"C:\Users\mg15d\AppData\Local\Temp" ]
+tempfiledirectory=[r"C:\Windows\Temp", r"C:\Users\mg15d\AppData\Local\Temp" ]
+def deleter(listofpath):
+    
 
-    for hehe in tempfiledirectory:
+    for hehe in listofpath:
         if os.path.isdir(hehe):
             for path, subdir, files in os.walk(hehe):
                 for file in files:
@@ -15,15 +16,15 @@ def deleter():
 
 
 
-deleter()
-def main():
-    time=time.sleep(172800)
+deleter(tempfiledirectory)
+def main(tempfiledirectory):
+    time.sleep(172800)
     choice=input("It's been two days since the temperorary files were last deleted, Delete files again? Yes/No ")
     if choice.lower()=="yes":
-        deleter()
+        deleter(tempfiledirectory)
     else:
         main()
         
     
 
-main()
+main(tempfiledirectory)
